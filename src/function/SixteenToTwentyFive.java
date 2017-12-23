@@ -1,5 +1,7 @@
 package function;
 
+import java.util.ArrayList;
+
 public class SixteenToTwentyFive {
 	public static void main(String[] args) {
 		System.out.println("@@16. " + returnString(19));
@@ -7,6 +9,20 @@ public class SixteenToTwentyFive {
 		System.out.println("@@18. " + returnBoolean("what you doing?"));
 		System.out.println("@@19. " + returnSumOfIndex("count all index total"));
 		
+	}
+	
+	/**
+	 * Mhd # 20. Write a method that take one String input and return a List of
+	 * last five characters. 
+	 */
+
+	public static ArrayList<Character> getLastFive(String text) {
+		ArrayList<Character> lastFive = new ArrayList<Character>();
+		for (int i = text.length() - 5; i < text.length(); i++) {
+			lastFive.add(text.charAt(i));
+		}
+
+		return lastFive;
 	}
 //	@@19. Write a method that take one String input and return the sum of all index.
 	public static int returnSumOfIndex(String text){
