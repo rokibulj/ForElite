@@ -8,6 +8,7 @@ public class SixteenToTwentyFive {
 		System.out.println("@@17. " + returnInteger("18"));
 		System.out.println("@@18. " + returnBoolean("what you doing?"));
 		System.out.println("@@19. " + returnSumOfIndex("count all index total"));
+		System.out.println("@@20. " + returnLastFive("retrurn last five character."));
 		
 	}
 	
@@ -16,7 +17,7 @@ public class SixteenToTwentyFive {
 	 * last five characters. 
 	 */
 
-	public static ArrayList<Character> getLastFive(String text) {
+	public static ArrayList<Character> returnLastFive(String text) {
 		ArrayList<Character> lastFive = new ArrayList<Character>();
 		for (int i = text.length() - 5; i < text.length(); i++) {
 			lastFive.add(text.charAt(i));
