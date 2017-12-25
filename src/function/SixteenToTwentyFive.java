@@ -13,48 +13,76 @@ public class SixteenToTwentyFive {
 		System.out.println("@@21. " + returnFirstFiveChar("First five char return"));
 		System.out.println("@@22. " + returnMiddleChar("supercalifragilisticexpialidocious"));
 		System.out.println("@@23. " + returnWordList("how are you my friend?"));
+		System.out.println("@@24. " + returnWord("first word return please"));
+		System.out.println("@@25. " + returnMessage("Check this sentence", "this"));
 
 	}
 	
-//	23. Write a method that take one String input and return a list of all word.
+//	25. Write a method that take one String and one word input and
+//	return true if that sentence contains given word otherwise return false.
 	
-	public static ArrayList<String> returnWordList(String text){
-		ArrayList<String> wordList = new ArrayList<String>();
+	public static boolean returnMessage(String text, String word){
+		boolean message = false;
 		String[] textArray = text.split(" ");
 		for(int i=0; i<textArray.length; i++){
+			if(textArray[i].equalsIgnoreCase(word)){
+				message = true;
+			}
+		}
+		
+		
+		return message;
+	}
+
+	// 24. Write a method that take one String input and return first word.
+
+	public static String returnWord(String text) {
+		String firstWord = "";
+		String[] textArray = text.split(" ");
+		firstWord = textArray[0];
+
+		return firstWord;
+	}
+
+	// 23. Write a method that take one String input and return a list of all
+	// word.
+
+	public static ArrayList<String> returnWordList(String text) {
+		ArrayList<String> wordList = new ArrayList<String>();
+		String[] textArray = text.split(" ");
+		for (int i = 0; i < textArray.length; i++) {
 			wordList.add(textArray[i]);
 		}
-		
+
 		return wordList;
 	}
-	
-//	22. Write a method that take one String input and return fifth to
-//	tenth characters as a String.
-	
-	public static ArrayList<Character> returnMiddleChar(String text){
+
+	// 22. Write a method that take one String input and return fifth to
+	// tenth characters as a String.
+
+	public static ArrayList<Character> returnMiddleChar(String text) {
 		ArrayList<Character> middleChar = new ArrayList<Character>();
-		for(int i=4; i<=10; i++){
+		for (int i = 4; i <= 10; i++) {
 			middleChar.add(text.charAt(i));
 		}
-		
+
 		return middleChar;
 	}
-	
+
 	// @@21. Write a method that take input one String and return a List of
 	// first five characters.
-	
-	public static ArrayList<Character> returnFirstFiveChar(String text){
+
+	public static ArrayList<Character> returnFirstFiveChar(String text) {
 		ArrayList<Character> firstFiveChar = new ArrayList<Character>();
-		for(int i=0; i<=4; i++){
+		for (int i = 0; i <= 4; i++) {
 			firstFiveChar.add(text.charAt(i));
 		}
-		
+
 		return firstFiveChar;
 	}
 
-//	 Mhd # 20. Write a method that take one String input and return a List of
-//	 last five characters.
-	 
+	// Mhd # 20. Write a method that take one String input and return a List of
+	// last five characters.
 
 	public static ArrayList<Character> returnLastFive(String text) {
 		ArrayList<Character> lastFive = new ArrayList<Character>();
