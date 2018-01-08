@@ -10,9 +10,27 @@ public class SixtySixToThirtyFive {
 		System.out.println("@@27. " + returnVowelCount("Count all Vowels"));
 		System.out.println("@@28. " + returnUpperCaseCount("CouNt All UppEr ChaR"));
 		System.out.println("@@29. " + returnCountWithoutSpace("we love our country"));
-		// System.out.println("@@30. " + returnRepeatedChar("Can You repeat full
-		// off"));
+		System.out.println("@@30. " + returnRepeatedChar("Return all repeated character"));
 
+	}
+
+	// 30. Write a method that take one String input and return all repeated characters.
+	
+	public static String returnRepeatedChar(String repeat){
+		String repeatedChar = "";
+		for(int i=0; i<repeat.length()-1; i++){
+			for(int j=i+1; j<repeat.length(); j++){
+					if(repeat.charAt(i) == repeat.charAt(j)){
+						if(!repeatedChar.contains(String.valueOf(repeat.charAt(i)))){
+							repeatedChar = repeatedChar + repeat.charAt(i);
+		
+					}
+					
+				}
+			}
+		}
+		
+		return repeatedChar;
 	}
 
 	// @@29. Write a method that take one String input and return the count
