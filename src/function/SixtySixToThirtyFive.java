@@ -1,5 +1,6 @@
 package function;
 
+import java.beans.FeatureDescriptor;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -11,25 +12,43 @@ public class SixtySixToThirtyFive {
 		System.out.println("@@28. " + returnUpperCaseCount("CouNt All UppEr ChaR"));
 		System.out.println("@@29. " + returnCountWithoutSpace("we love our country"));
 		System.out.println("@@30. " + returnRepeatedChar("Return all repeated character"));
+		System.out.println("@@31. " + returnAllUniqueChar("return all unique char"));
 
 	}
+	// 31. Write a method that take one String input & return all the unique
+	// character.
 
-	// 30. Write a method that take one String input and return all repeated characters.
-	
-	public static String returnRepeatedChar(String repeat){
-		String repeatedChar = "";
-		for(int i=0; i<repeat.length()-1; i++){
-			for(int j=i+1; j<repeat.length(); j++){
-					if(repeat.charAt(i) == repeat.charAt(j)){
-						if(!repeatedChar.contains(String.valueOf(repeat.charAt(i)))){
-							repeatedChar = repeatedChar + repeat.charAt(i);
-		
-					}
-					
+	public static String returnAllUniqueChar(String text) {
+		String uniqueChar = "";
+		uniqueChar = text;
+		for (int i = 0; i < text.length(); i++) {
+			for (int j = i + 1; j < text.length(); j++) {
+				if (text.charAt(i) == text.charAt(j)) {
+					uniqueChar = uniqueChar.replaceAll(String.valueOf(text.charAt(i)), "");
 				}
 			}
 		}
-		
+
+		return uniqueChar;
+	}
+
+	// 30. Write a method that take one String input and return all repeated
+	// characters.
+
+	public static String returnRepeatedChar(String repeat) {
+		String repeatedChar = "";
+		for (int i = 0; i < repeat.length() - 1; i++) {
+			for (int j = i + 1; j < repeat.length(); j++) {
+				if (repeat.charAt(i) == repeat.charAt(j)) {
+					if (!repeatedChar.contains(String.valueOf(repeat.charAt(i)))) {
+						repeatedChar = repeatedChar + repeat.charAt(i);
+
+					}
+
+				}
+			}
+		}
+
 		return repeatedChar;
 	}
 
