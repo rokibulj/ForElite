@@ -1,9 +1,11 @@
 package function;
 
 import java.beans.FeatureDescriptor;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.IntStream;
 
 public class SixtySixToThirtyFive {
 	public static void main(String[] args) {
@@ -13,8 +15,68 @@ public class SixtySixToThirtyFive {
 		System.out.println("@@29. " + returnCountWithoutSpace("we love our country"));
 		System.out.println("@@30. " + returnRepeatedChar("Return all repeated character"));
 		System.out.println("@@31. " + returnAllUniqueChar("return all unique char"));
+		System.out.println("@@32. " + returnCountOfGivenChar("bangladesh", 'a'));
+		
+		int[] numArray = {2, 3, 5, 10};
+		System.out.println("@@33. " + returnSumOfArrayValue(numArray));
+		
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+		numList.add(2);
+		numList.add(3);
+		numList.add(5);
+		System.out.println("@@34. " + returnSumOfList(numList));
+		System.out.println("@@35. " + returnReverseString("America"));
 
 	}
+	
+//	@@35. Write a method that take one String input and return same
+//	String in reverse order
+	
+	public static String returnReverseString(String text){
+		String reverseString = "";
+		for(int i=text.length()-1; i>=0; i--){
+			reverseString = reverseString + text.charAt(i);
+			
+		}
+		
+		return reverseString;
+	}
+	
+//	@@34. Write a method that take one Integer type List input and return sum of all values.
+	
+	public static int returnSumOfList(ArrayList<Integer> numList){
+		int sumOfList = 0;
+		for(int i=0; i<numList.size(); i++){
+			sumOfList = sumOfList + numList.get(i);
+		}
+		
+		return sumOfList;
+	}
+	
+//	@@33. Write a method that take one Integer type Array input and
+//	return sum of all values.
+
+	public static int returnSumOfArrayValue(int[] numArray){
+		int sumOfArrayValue = 0;
+		sumOfArrayValue = IntStream.of(numArray).sum();
+		
+		return sumOfArrayValue;
+	}
+	
+	// 32. Write a method that take one String and one character input and
+	// return the count of that given character.
+
+	public static int returnCountOfGivenChar(String text, char first) {
+		int countOfGivenChar = 0;
+		for (int i = 0; i < text.length(); i++) {
+			if (String.valueOf(text.charAt(i)).equalsIgnoreCase(String.valueOf(first))) {
+				countOfGivenChar++;
+			}
+		}
+
+		return countOfGivenChar;
+	}
+
 	// 31. Write a method that take one String input & return all the unique
 	// character.
 
